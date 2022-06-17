@@ -15,12 +15,17 @@
         <?php
         if (isset($_POST['submit'])) {
             $name = addslashes($_POST['name']);
+            $phone = addslashes($_POST['phone']);
             $email = addslashes($_POST['email']);
             $password = addslashes(md5($_POST['password']));
 
             if ($name != "" && $email != "" && $password != "") {
-                $query = "INSERT INTO users(name, email, password) VALUES ('$name', '$email', '$password')";
+                $query = "INSERT INTO users(name,phone, email, password) 
+                VALUES ('$name', '$phone', '$email', '$password')";
+                $query1 = "INSERT INTO superusers(name,phone, email, password) 
+                VALUES ('$name', '$phone', '$email', '$password')";
                 $result = mysqli_query($conn, $query);
+                $result = mysqli_query($conn, $query1);
                 if ($result) {
         ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,6 +33,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <strong>User is added successfully.</strong>
+                        <meta http-equiv="refresh" content="0.5;URL=manageuser.php">
                     </div>
 
                     <script>
@@ -63,6 +69,12 @@
                                         <input class="form-control" type="text" name="name">
                                     </div>
                                 </div>
+                                <div class="form-group col-12">
+                                    <label class="col-form-label">Phone</label>
+                                    <div>
+                                        <input class="form-control" type="text" name="phone">
+                                    </div>
+                                </div>
 
                                 <div class="form-group col-12">
                                     <label class="col-form-label">Email</label>
@@ -70,13 +82,14 @@
                                         <input class="form-control" type="email" name="email">
                                     </div>
                                 </div>
-
+                                
                                 <div class="form-group col-12">
                                     <label class="col-form-label">Password</label>
                                     <div>
                                         <input class="form-control" type="password" name="password">
                                     </div>
                                 </div>
+                                
 
                                 <div class="col-12">
                                     <button type="submit" name="submit" class="btn">Submit</button>
@@ -110,7 +123,6 @@
 <script src="assets/js/functions.js"></script>
 <script src="assets/vendors/chart/chart.min.js"></script>
 <script src="assets/js/admin.js"></script>
-<script src='assets/vendors/switcher/switcher.js'></script>
 </body>
 
 

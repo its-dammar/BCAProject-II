@@ -21,7 +21,7 @@
 
 			if ($name != "" && $email != "" && $password != "" && $confirm_password != "") {
 				if ($password == $confirm_password) {
-					$query = "INSERT INTO admin (name, email, password) VALUES ('$name', '$email', '$password')";
+					$query = "INSERT INTO admin (name, email, password, confirm_password) VALUES ('$name', '$email', '$password','$confirm_password')";
 					$result = mysqli_query($conn, $query);
 					if ($result) {
 		?>
