@@ -1,4 +1,4 @@
-<?php include("connection/config.php") ;?>
+
 <?php include("inc/header.php") ;?>
 
 <!-- <meta http-equiv="refresh" content="0.5;URL=manageadmin.php"> -->

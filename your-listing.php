@@ -1,4 +1,3 @@
-
 <?php include("inc/header.php") ;?>
 
 <body class="" style="background-color:#A1A1A1">
@@ -12,7 +11,8 @@
                     <h2>Your Listing</h2>
                 </div>
                 <div class="col-md-6 image-register d-flex justify-content-end">
-                    <img class="col-12 col-md-6" alt="Logo" src="admin/assets/images/logoblue.png" width="190" height="57">
+                    <img class="col-12 col-md-6" alt="Logo" src="admin/assets/images/logoblue.png" width="190"
+                        height="57">
                 </div>
                 <span class="text-warning d-flex justify-content-end pt-0">Business Directory</span>
 

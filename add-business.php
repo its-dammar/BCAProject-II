@@ -1,4 +1,4 @@
-<?php include("connection/config.php") ;?>
+
 <?php include("inc/header.php") ;?>
 
 <body class=" " style="background-color:#A1A1A1">
