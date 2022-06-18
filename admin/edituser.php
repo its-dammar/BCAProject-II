@@ -29,7 +29,7 @@
                 if (isset($_POST['submit'])) {
                     $name = addslashes($_POST['name']);
                     $email = addslashes($_POST['email']);
-                    $password = addslashes($_POST['password']);
+                    $password = addslashes (md5($_POST['password']));
 
                     if ($name != "" && $email != "" && $password != "") {
                         $query = "UPDATE users SET name ='$name', email='$email', password = '$password' WHERE id=$id";
@@ -41,6 +41,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 <strong>User is updated successfully.</strong>
+                                <meta http-equiv="refresh" content="0.5;URL=manageuser.php">
                             </div>
 
                             <script>

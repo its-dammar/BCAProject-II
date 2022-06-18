@@ -1,6 +1,10 @@
 <?php
-// session_start();
-// require('secure_admin.php'); 
+ session_start();
+ if(isset($_SESSION['id']))
+ {
+    require('secure_admin.php'); 
+ }
+
 ?>
 
 <div class="navbar-section">
@@ -52,13 +56,17 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php">+ Add Business</a>
+                    <!-- <a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php"> -->
+                 <?php
+                    if(isset($_SESSION["email"]) == true){
+                        echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="add-business.php">+ Add Business</a>';
+                    } else{
+                        echo '<a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php">+ Add Business</a>';
+                    }
+                 ?>  
                     <a class="nav-link text-white fs-5 btn-outline-warning" href="user-signup.php">Signup</a>
-                    <a href="#" class="nav-link text-white fs-5 btn-outline-warning">
-                        <i class="ti-user"></i>
-                    </a>
                     <?php
-                    if($_SESSION["email"] != true){
+                    if(isset($_SESSION["email"]) != true){
                         echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php">Login</a>';
                     }
                      else {
@@ -66,14 +74,13 @@
                     <div class="dropdown">
                         <a class="nav-link text-white fs-5 btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php if (isset($_SESSION['email'])) {
-                                echo $_SESSION['email'];
+                            <?php if (isset($_SESSION['name'])) {
+                                echo $_SESSION['name'];
                                 } ?><i class="fa-solid fa-user"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="user-dashboard.php">Dashboard</a></li>
                             <li><a class="dropdown-item" href="loginprocess/logout.php">Logout</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
                     <?php 

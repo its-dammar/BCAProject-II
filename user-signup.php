@@ -21,28 +21,27 @@
             <?php
         if (isset($_POST['submit'])) 
         {
-            $name = addslashes($_POST['name']);
-            $phone = addslashes($_POST['phone']);
-            $email = addslashes($_POST['email']);
-            $password = addslashes(md5($_POST['password']));
-            $confirm_password = addslashes(md5($_POST['confirm_password']));
+            $name = $_POST['name'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $password = md5($_POST['password']);
+            $confirm_password = md5($_POST['confirm_password']);
 
             if ($name != "" && $email != "" && $password != "" && $confirm_password!="") 
             {
                if($password == $confirm_password)
                {
-                    $query = "INSERT INTO users (name,phone, email, password, confirm_password) 
+                    $query = "INSERT INTO users (name, phone, email, password, confirm_password) 
                     VALUES ('$name', '$phone', '$email', '$password','$confirm_password')";
-                    
-                    $query1 = "INSERT INTO superusers (name,phone, email, password,confirm_password) 
-                    VALUES ('$name', '$phone', '$email', '$password', '$confirm_password')";
-                   
                    $result = mysqli_query($conn, $query);
-                    $result = mysqli_query($conn, $query1);
+                    
+                    // $query1 = "INSERT INTO superusers (name,phone, email, password,confirm_password) 
+                    // VALUES ('$name', '$phone', '$email', '$password', '$confirm_password')";
+                   
+                    // $result = mysqli_query($conn, $query1);
                     if ($result) 
                     {
                         ?>
-                       
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>

@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
 
     if ($email != "" && $password != "") {
-        $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+        $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";    
         $result = mysqli_query($conn, $query);
         $count = mysqli_num_rows($result);
         if ($count == 1) {

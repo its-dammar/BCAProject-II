@@ -1,4 +1,10 @@
+<?php
 
+//  if(isset($_SESSION['id']))
+//  {
+//     require('secure_admin.php'); 
+//  }
+?>
 <?php include("inc/header.php") ;?>
 
 <body class=" " style="background-color:#A1A1A1">
@@ -34,13 +40,13 @@
                     $description = addslashes($_POST['description']);
 
                     if($business_name!="" && $address!="" && $mobile!="" && $business_category!="" && $logo!="" && $country!="" && $provience!="" && $district!="" && $zip_code!="" && $business_email!="" && $description!=""){
-                        $query = "INSERT INTO businesslists (business_name, address,mobile,business_category,logo,country, provience,district, zip_code business_email, description) 
-                        VALUES ('$business_name','$address','$mobile','$business_category','$logo','$country','$provience','$district','$zip_code','$business_email','$description')";
+                        $query = "INSERT INTO businesslists (business_name, address, mobile, business_category, logo, country, provience, district, zip_code, business_email, description) 
+                        VALUES ('$business_name', '$address', '$mobile', '$business_category', '$logo', '$country', '$provience', '$district', '$zip_code', '$business_email', '$description')";
                         echo $query;
                         $result = mysqli_query($conn,$query);
                         if($result){
                             echo "<div class='alert alert-success'>Business Added Successfully</div>";
-                            echo "<meta http-equiv='refresh' content='0.5;URL=manageadmin.php'>";
+                            echo "<meta http-equiv='refresh' content='0.5;URL=index.php'>";
                         
                         }
                         else{
@@ -49,6 +55,12 @@
                             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                           </div>";
                         }
+                }
+                else{
+                    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>Please fill all the fields</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                  </div>";
                 }
             }
             ?>
@@ -62,8 +74,8 @@
                                 aria-describedby="nameHelp">
                         </div>
                         <div class="mb-3 ">
-                            <label for="exampleInputAddress" class="form-label text-white fs-5">Address</label>
-                            <input type="text" class="form-control" name="address" id="exampleInputAddress"
+                            <label for="exampleInputaddress" class="form-label text-white fs-5">address</label>
+                            <input type="text" class="form-control" name="address" id="exampleInputaddress"
                                 aria-describedby="addressHelp">
                         </div>
                         <div class="mb-3 ">
@@ -138,7 +150,7 @@
                         </div>
                         <div class="mb-3 ">
                             <label for="exampleInputEmail1" class="form-label text-white fs-5">Business Email
-                                Address</label>
+                                address</label>
                             <input type="email" class="form-control" name="business_email" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
