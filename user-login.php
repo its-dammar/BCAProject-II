@@ -19,7 +19,6 @@
                     <img class="col-12 col-md-6" alt="Logo" src="admin/assets/images/logoblue.png" width="190" height="57">
                 </div>
                 <span class="text-warning d-flex justify-content-end pt-0">Business Directory</span>
-
             </div>
             <form action="loginprocess/userlogin.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3 ">

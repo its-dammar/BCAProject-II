@@ -47,7 +47,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <strong>User is added successfully.</strong>
-                            <meta http-equiv="refresh" content="0.5;URL=index.php">
+                            <meta http-equiv="refresh" content="0.5; URL=index.php">
                         </div>
 
                         <script>

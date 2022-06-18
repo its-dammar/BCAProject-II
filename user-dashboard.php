@@ -50,25 +50,17 @@
                 </div>
                     <div class="col-md-6">
                         <h3 class="title text-white">Your Listing </h3>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                    </div>
+                    <?php
+                    $query = "SELECT * FROM businesslists";
+                    $result = mysqli_query($conn, $query);
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="col-md-6">';
+                        echo '<div class="listing p-2 text-white fs-5">';
+                        echo $row['business_name'];
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    ?>
             </div>
     </section>
     <?php include("inc/footer.php") ;?>
