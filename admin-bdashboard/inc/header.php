@@ -94,8 +94,7 @@ $data1 = $config_result->fetch_assoc();
                         <a href="index.php" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                     </li>
                     <li>
-                        <a href="#" class="ttr-material-button ttr-submenu-toggle">Setting <i
-                                class="fa fa-angle-down"></i></a>
+                        <a href="#" class="ttr-material-button ttr-submenu-toggle">Setting <i class="fa fa-angle-down"></i></a>
                         <div class="ttr-header-submenu">
                             <ul>
                                 <li><a href="manageadmin.php">Admin</a></li>
@@ -114,7 +113,7 @@ $data1 = $config_result->fetch_assoc();
                     </li>
 
                     <li>
-                        <a href="#" class="ttr-material-button ttr-submenu-toggle text-white">
+                        <a href="#" class="ttr-material-button ttr-submenu-toggle">
                             <?php if (isset($_SESSION['name'])) {
                                 echo $_SESSION['name'];
                                 } ?><i class="ti-user"></i>
@@ -134,8 +133,7 @@ $data1 = $config_result->fetch_assoc();
                 <form class="ttr-search-form">
                     <div class="ttr-search-input-wrapper">
                         <input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
-                        <button type="submit" name="search" class="ttr-search-submit"><i
-                                class="ti-arrow-right"></i></button>
+                        <button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
                     </div>
                     <span class="ttr-search-close ttr-search-toggle">
                         <i class="ti-close"></i>
