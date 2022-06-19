@@ -17,7 +17,7 @@
                 <span class="text-warning d-flex justify-content-end pt-0">Business Directory</span>
 
             </div>
-            <form action="loginprocess/adminloginprocess.php" method="POST" enctype="multipart/form-data">
+            <!-- <form action="loginprocess/adminloginprocess.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3 ">
@@ -58,7 +58,7 @@
                 <button type="submit" class="btn btn-outline-light fs-4" name="submit">Submit</button>
 
 
-            </form>
+            </form> -->
         </div>
 
     </section>

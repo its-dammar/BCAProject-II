@@ -71,7 +71,7 @@
                     }
                      else {
                     ?>
-                    <div class="dropdown">
+                    <div class="dropdown px-3">
                         <a class="nav-link text-white fs-5 btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <?php if (isset($_SESSION['name'])) {
@@ -80,9 +80,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="user-profile.php">profile</a></li>
-                            <li><a class="dropdown-item" href="user-dashboard.php">Your Listing</a></li>
-                            <li><a class="dropdown-item" href="user-dashboard.php">Add Business</a></li>
-                            <li><a class="dropdown-item" href="user-dashboard.php">Message</a></li>
+                            <li><a class="dropdown-item" href="your-listing.php">Your Listing</a></li>
+                            <li><a class="dropdown-item" href="add-business.php">Add Business</a></li>
+                            <li><a class="dropdown-item" href="message.php">Message</a></li>
                             <li><a class="dropdown-item" href="loginprocess/logout.php">Logout</a></li>
                         </ul>
                     </div>
