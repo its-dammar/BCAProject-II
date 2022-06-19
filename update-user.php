@@ -31,41 +31,30 @@
             {
                if($password == $confirm_password)
                 {
-                    $duplicate= "SELECT * FROM users where email='$email'";
-                    $result = mysqli_query($conn, $duplicate);  
-                    if (mysqli_num_rows($result)>0)
+                    
+                    $query = "INSERT INTO users (name, phone, email, password) 
+                    VALUES ('$name', '$phone', '$email', '$password')";
+                    echo $query;
+                    $result = mysqli_query($conn, $query);
+                    // $query1 = "INSERT INTO superusers (name,phone, email, password,confirm_password) 
+                    // VALUES ('$name', '$phone', '$email', '$password', '$confirm_password')";
+                
+                    // $result = mysqli_query($conn, $query1);
+                    if ($result) 
                     {
                         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                            <strong>This email is already taken</strong> 
-                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-                        echo "<meta http-equiv='refresh' content='2;URL=user-signup.php'>";
-                    }
-                    else{
-                        $query = "INSERT INTO users (name, phone, email, password) 
-                        VALUES ('$name', '$phone', '$email', '$password')";
-                        echo $query;
-                        $result = mysqli_query($conn, $query);
-                        // $query1 = "INSERT INTO superusers (name,phone, email, password,confirm_password) 
-                        // VALUES ('$name', '$phone', '$email', '$password', '$confirm_password')";
-                    
-                        // $result = mysqli_query($conn, $query1);
-                        if ($result) 
-                        {
-                            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                            <strong>User user added successfully</strong> 
-                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-                        echo "<meta http-equiv='refresh' content='2;URL=user-signup.php'>";
-                        } else 
-                        {
-                            echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                            <strong>User is not added</strong> Please, try again.
-                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                        </div>";
-                        echo "<meta http-equiv='refresh' content='2;URL=user-signup.php'>";
+                        <strong>User user added successfully</strong> 
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
+                    echo "<meta http-equiv='refresh' content='2;URL=user-signup.php'>";
+                    } else 
+                    {
+                        echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                        <strong>User is not added</strong> Please, try again.
+                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
+                    echo "<meta http-equiv='refresh' content='2;URL=user-signup.php'>";
                         }
-                    }
                         
                 }
                 else

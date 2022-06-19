@@ -10,16 +10,21 @@
     <div class="" style="background-image: url('assets/uploads/1.jpg'); background-size:cover; height:400px;">
         <div class="slider">
             <h3 class="text-center text-white fs-2">Search Business</h3>
-            <div class="search container col-sm-6 col-md-8 xm-auto p-2">
+            <div class="search container col-md-8 xm-auto p-2">
                 <form class="row g-3 search-form">
-                    <div class="col-md-4 p-0">
-                        <!-- <label for="inputProvience" class="form-label text-white fs-4">Choose Proviece</label> -->
+                    <div class="col-md-2 p-0">
+                        <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
+                        <input class="form-control" id="" type="text" placeholder="type business name" aria-label="">
+ 
+                    </div>
+                    <div class="col-md-2 p-0">
+                        <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
                         <select id="inputProvience" class="form-select form-select1" style="width:100%">
-                            <option selected>Choose Proviece</option>
+                            <option selected>Choose Province</option>
                             <option>...</option>
                         </select>
                     </div>
-                    <div class="col-md-4 p-0">
+                    <div class="col-md-2 p-0">
                         <!-- <label for="inputDistrict" class="form-label text-white fs-4">Choose District</label> -->
                         <select id="inputDistrict" class="form-select form-select2">
                             <option selected>Choose District</option>
@@ -58,7 +63,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -68,7 +73,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -78,7 +83,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -88,7 +93,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -98,7 +103,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -108,7 +113,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -137,7 +142,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -147,7 +152,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -157,7 +162,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -167,7 +172,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -205,7 +210,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -215,7 +220,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -225,7 +230,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -235,7 +240,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -245,7 +250,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -255,7 +260,7 @@
                     <div class="d-flex justify-content-center mb-4">
                         <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                     </div>
-                    <h5 class="mb-3">Maria Smantha</h5>
+                    <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                     <h6 class="text-primary mb-3">Web Developer</h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -284,7 +289,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -294,7 +299,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -304,7 +309,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
@@ -314,7 +319,7 @@
                             <div class="d-flex justify-content-center mb-4">
                                 <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-list/index.php" class="text-decoration-none"><h5 class="mb-3">Maria Smantha</h5></a>
                             <h6 class="text-primary mb-3">Web Developer</h6>
                             <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                             <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>

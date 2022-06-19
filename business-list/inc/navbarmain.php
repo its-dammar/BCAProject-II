@@ -2,7 +2,7 @@
  session_start();
  if(isset($_SESSION['id']))
  {
-    require('secure_admin.php'); 
+    require('../secure_admin.php'); 
  }
 
 ?>
@@ -40,8 +40,8 @@
                 </div>
             </div>
             <!-- side toggle -->
-            <a class="navbar-brand p-2" href="index.php">
-                <img class="ttr-logo-desktop" alt="" src="uploads/logoblue.png" width="160" height="27">
+            <a class="navbar-brand p-2" href="../index.php">
+                <img class="ttr-logo-desktop" alt="" src="../uploads/logoblue.png" width="160" height="27">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -59,15 +59,15 @@
                     <!-- <a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php"> -->
                  <?php
                     if(isset($_SESSION["email"]) == true){
-                        echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="add-business.php">+ Add Business</a>';
+                        echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="../add-business.php">+ Add Business</a>';
                     } else{
-                        echo '<a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php">+ Add Business</a>';
+                        echo '<a class="nav-link text-white fs-5 btn-outline-warning" href="../user-login.php">+ Add Business</a>';
                     }
                  ?>  
-                    <a class="nav-link text-white fs-5 btn-outline-warning" href="user-signup.php">Signup</a>
+                    <a class="nav-link text-white fs-5 btn-outline-warning" href="../user-signup.php">Signup</a>
                     <?php
                     if(isset($_SESSION["email"]) != true){
-                        echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="user-login.php">Login</a>';
+                        echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="../user-login.php">Login</a>';
                     }
                      else {
                     ?>
@@ -79,11 +79,11 @@
                                 } ?><i class="fa-solid fa-user"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="user-profile.php">profile</a></li>
-                            <li><a class="dropdown-item" href="user-dashboard.php">Your Listing</a></li>
-                            <li><a class="dropdown-item" href="user-dashboard.php">Add Business</a></li>
-                            <li><a class="dropdown-item" href="user-dashboard.php">Message</a></li>
-                            <li><a class="dropdown-item" href="loginprocess/logout.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="../user-profile.php">profile</a></li>
+                            <li><a class="dropdown-item" href="../user-dashboard.php">Your Listing</a></li>
+                            <li><a class="dropdown-item" href="../user-dashboard.php">Add Business</a></li>
+                            <li><a class="dropdown-item" href="../user-dashboard.php">Message</a></li>
+                            <li><a class="dropdown-item" href="../loginprocess/logout.php">Logout</a></li>
                         </ul>
                     </div>
                     <?php 

@@ -19,32 +19,23 @@
             </div>
             <div class="your-listing">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
-                        </div>
-                        <div class="listing p-2">
-                            <a href="business-login.php" class="text-decoration-none fs-5 p-2">XDezo Technologies</a>
+                    <div class="col-md-8 m-auto">
+                        <div class="listing ">
+                           <div class="col-md-12 bg-light p-4">
+                                <?php    
+                                    $query = "SELECT * FROM businesslists";
+                                    $result = mysqli_query($conn, $query);
+                                    $i=0;
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        echo '<div class="listing  fs-5 p-3">';
+                                    
+                                    echo " <a href='business-login.php' class='text-decoration-none'>".  "<h3>".$row['business_name']. "</h3>" ."</a>" ;
+                                    echo " <span class=''>".  $row['business_category'] ."</span>" ;
+                                    "</div>";
+                                        echo '</div>';
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

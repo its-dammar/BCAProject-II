@@ -1,7 +1,9 @@
+
+
 <?php include("inc/header.php"); ?>
 <body>
     <!-- navbar section -->
-    <?php include("inc/navbar.php"); ?>
+    <?php include("inc/navbarmain.php"); ?>
     <!-- navbar section -->
 
     <!-- slider section -->
@@ -52,6 +54,10 @@
       </button>
     </div>
     <!-- slider section -->
+
+    <!-- navbar section -->
+    <?php include("inc/navbar.php"); ?>
+    <!-- navbar section -->
 
     <!-- reviews section -->
     <section class="pt-5 bg-light">

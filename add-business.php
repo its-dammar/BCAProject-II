@@ -1,9 +1,9 @@
 <?php
 
-//  if(isset($_SESSION['id']))
-//  {
-//     require('secure_admin.php'); 
-//  }
+ if(isset($_SESSION['id']))
+ {
+    require('secure_admin.php'); 
+ }
 ?>
 <?php include("inc/header.php") ;?>
 
@@ -24,46 +24,68 @@
                 <span class="text-warning d-flex justify-content-end pt-0">Business Directory</span>
 
             </div>
-
             <?php
-                if(isset($_POST['submit'])){
-                    $business_name = addslashes($_POST['business_name']);
-                    $address = addslashes($_POST['address']);
-                    $mobile = addslashes($_POST['mobile']);
-                    $business_category = addslashes($_POST['business_category']);
-                    $logo = addslashes($_POST['logo']);
-                    $country = addslashes($_POST['country']);
-                    $provience = addslashes($_POST['provience']);
-                    $district = addslashes($_POST['district']);
-                    $zip_code = addslashes($_POST['zip_code']);
-                    $business_email = addslashes($_POST['business_email']);
-                    $description = addslashes($_POST['description']);
+                if(isset($_POST['submit']))
+                {
+                    $business_name = $_POST['business_name'];
+                    $address = $_POST['address'];
+                    $mobile = $_POST['mobile'];
+                    $business_category = $_POST['business_category'];
+                    $logo = $_POST['logo'];
+                    $country = $_POST['country'];
+                    $province = $_POST['province'];
+                    $district = $_POST['district'];
+                    $zip_code = $_POST['zip_code'];
+                    $business_email = $_POST['business_email'];
+                    $description = $_POST['description'];
 
-                    if($business_name!="" && $address!="" && $mobile!="" && $business_category!="" && $logo!="" && $country!="" && $provience!="" && $district!="" && $zip_code!="" && $business_email!="" && $description!=""){
-                        $query = "INSERT INTO businesslists (business_name, address, mobile, business_category, logo, country, provience, district, zip_code, business_email, description) 
-                        VALUES ('$business_name', '$address', '$mobile', '$business_category', '$logo', '$country', '$provience', '$district', '$zip_code', '$business_email', '$description')";
-                        echo $query;
-                        $result = mysqli_query($conn,$query);
-                        if($result){
-                            echo "<div class='alert alert-success'>Business Added Successfully</div>";
-                            echo "<meta http-equiv='refresh' content='0.5;URL=index.php'>";
-                        
-                        }
-                        else{
-                            echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                            <strong>Business is not added</strong> Please, try again.
-                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                          </div>";
-                        }
+                    if($business_name!="" && $address!="" && $mobile!="" && $business_category!="" && $logo!="" && $country!="" && $province!="" && $district!="" && $zip_code!="" && $business_email!="" && $description!="")
+                    {  
+                        $duplicate= "SELECT * FROM businesslists where business_name='$business_name'";
+                        $result = mysqli_query($conn, $duplicate);  
+                        if (mysqli_num_rows($result)>0)
+                            {
+                                echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>This business is already added</strong> check your business list.
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+                                echo "<meta http-equiv='refresh' content='2;URL=add-business.php'>";
+                            }
+                            else
+                            {
+                                $query = "INSERT INTO businesslists (business_name, address, mobile, business_category, logo, country, province, district, zip_code, business_email, description) 
+                                VALUES ('$business_name', '$address', '$mobile', '$business_category', '$logo', '$country', '$province', '$district', '$zip_code', '$business_email', '$description')";
+                                echo $query;
+                                $result = mysqli_query($conn, $query);
+                                if($result)
+                                {
+                                    echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                                        <strong>Business is  added successfully</strong>
+                                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                        </div>";
+                                    echo "<meta http-equiv='refresh' content='1.5;URL=add-business.php'>";
+                                
+                                }
+                                else
+                                {
+                                    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                        <strong>Business is not added</strong> Please, try again.
+                                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                        </div>";
+                                        echo "<meta http-equiv='refresh' content='1.5;URL=add-business.php'>";
+                                }
+                            }
+                    }
+                    else
+                    {
+                        echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                <strong>All fields are required</strong> Please, try again.
+                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                            </div>";
+                            echo "<meta http-equiv='refresh' content='1.5;URL=add-business.php'>";
+                    }
                 }
-                else{
-                    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                    <strong>Please fill all the fields</strong>
-                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                  </div>";
-                }
-            }
-            ?>
+                ?>
             <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="row">
 
@@ -80,12 +102,12 @@
                         </div>
                         <div class="mb-3 ">
                             <label for="exampleInputmobile" class="form-label text-white fs-5">mobile</label>
-                            <input type="tel" class="form-control" name="mobile" id="exampleInputmobile" 
-                            pattern="[0-9]{10}"   aria-describedby="mobileHelp">
+                            <input type="tel" class="form-control" name="mobile" id="exampleInputmobile"
+                            pattern="[0-9]{10}"    aria-describedby="mobileHelp">
                         </div>
                         <div class="mb-3 ">
                             <label for="business_category" class="form-label text-white fs-5">Business Category</label>
-                            <select id="inputProvience" class="form-select form-select1" name="business_category"
+                            <select id="inputprovince" class="form-select form-select1" name="business_category"
                                 style="width:100%">
                                 <option selected>Business Category</option>
                                 <option value="bancking">Banking</option>
@@ -98,7 +120,8 @@
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">
                                 Logo
-                            </button> <input type="text" class="form-control" name="logo" id="imagebox"
+                            </button>
+                            <input type="text" class="form-control" disabled name="logo" id="imagebox"
                                 aria-describedby="logoHelp">
 
                             <!-- Modal -->
@@ -141,8 +164,10 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="secondFunction()">Select</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                                onclick="secondFunction()">Select</button>
                                         </div>
                                     </div>
                                 </div>
@@ -167,8 +192,8 @@
                             </select>
                         </div>
                         <div class="mb-3 ">
-                            <label for="provience" class="form-label text-white fs-5">Provience</label>
-                            <select id="provience" class="form-select form-select1" name="provience" style="width:100%">
+                            <label for="province" class="form-label text-white fs-5">province</label>
+                            <select id="province" class="form-select form-select1" name="province" style="width:100%">
                                 <option selected>Choose Proviece</option>
                                 <option value="gamdaki">Gandaki</option>
                                 <option value="suderpachim">Sudurpachim</option>
@@ -176,9 +201,9 @@
                             </select>
                         </div>
                         <div class="mb-3 ">
-                            <label for="district" class="form-label text-white fs-5">District</label>
+                            <label for="district" class="form-label text-white fs-5">district</label>
                             <select id="district" class="form-select form-select1" name="district" style="width:100%">
-                                <option selected>Choose District</option>
+                                <option selected>Choose district</option>
                                 <option value="Kaski">Kaski</option>
                                 <option value="Bajhang">Bajhang</option>
                             </select>
@@ -190,9 +215,9 @@
                         </div>
                         <div class="mb-3">
                             <div class="mb-3">
-                                <label for="BusinessDescription" class="form-label text-white fs-5">Business
-                                    Description</label>
-                                <textarea class="form-control" id="BusinessDescription" rows="5" aria-label=""
+                                <label for="Businessdescription" class="form-label text-white fs-5">Business
+                                    description</label>
+                                <textarea class="form-control" id="Businessdescription" rows="5" aria-label=""
                                     name="description"></textarea>
                             </div>
                         </div>

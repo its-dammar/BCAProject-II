@@ -1,7 +1,7 @@
 <?php include("inc/header.php"); ?>
 <body>
     <!-- navbar section -->
-    <?php include("inc/navbar.php"); ?>
+    <?php include("inc/navbarmain.php"); ?>
     <!-- navbar section -->
 
     <!-- slider section -->
@@ -20,6 +20,9 @@
         </div>
     </section>
     <!-- slider section -->
+        <!-- navbar section -->
+        <?php include("inc/navbar.php"); ?>
+    <!-- navbar section -->
 
     <!-- Header-->
     <header class="py-5">

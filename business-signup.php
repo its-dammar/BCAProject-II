@@ -19,51 +19,66 @@
                 <span class="text-warning d-flex justify-content-end pt-0">Business Directory</span>
 
             </div>
-            <?php
-		if (isset($_POST['submit'])) {
-			$username = addslashes($_POST['username']);
-			$password = addslashes(md5($_POST['password']));
-			$confirm_password = addslashes(md5($_POST['confirm_password']));
+         <?php
+            if (isset($_POST['submit'])) 
+            {
+                $username = addslashes($_POST['username']);
+                $password = addslashes(md5($_POST['password']));
+                $confirm_password = addslashes(md5($_POST['confirm_password']));
 
-			if ($username != "" && $password != "" && $confirm_password != "") {
-				if ($password == $confirm_password) {
-					$query = "INSERT INTO bsignup (username, password, confirm_password) 
-                    VALUES ('$username', '$password','$confirm_password')";
-					$result = mysqli_query($conn, $query);
-					if ($result) {
-		?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>Admin is added successfully.</strong>
-                <meta http-equiv="refresh" content="0.5;URL=business-login.php">
-            </div>
-
-            <script>
-            $(".alert").alert();
-            </script>
-            <?php
-					} else {
-					?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>Admin couldn't be added successfully.</strong>
-            </div>
-            <script>
-            $(".alert").alert();
-            </script>
-            <?php
-					}
-				} else {
-					echo "Both password field doesn't match.";
-				}
-			} else {
-				echo "All fields are necessary.";
-			}
-		}
+                if ($username != "" && $password != "" && $confirm_password != "") 
+                {
+                    if ($password == $confirm_password) 
+                    {
+                        $duplicate= "SELECT * FROM bsignup where username='$username'";
+                        $result = mysqli_query($conn, $duplicate);  
+                        if (mysqli_num_rows($result)>0)
+                            {
+                                echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>This user name is already taken</strong> 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+                                echo "<meta http-equiv='refresh' content='2;URL=business-signup.php'>";
+                            }
+                            else
+                            {
+                                $query = "INSERT INTO bsignup (username, password, confirm_password) 
+                                VALUES ('$username', '$password','$confirm_password')";
+                                $result = mysqli_query($conn, $query);
+                                if ($result) 
+                                {
+                                    echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                                    <strong>This username is added succefully</strong> 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+                                echo "<meta http-equiv='refresh' content='2;URL=business-signup.php'>";
+                                } else 
+                                {
+                                    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>This username couldn't added </strong> try again.
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+                                echo "<meta http-equiv='refresh' content='2;URL=business-signup.php'>";
+                                }
+                            }
+                    }
+                    else{
+                        echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>password couldn't match </strong> try again.
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+                                echo "<meta http-equiv='refresh' content='2;URL=business-signup.php'>";
+                    }
+                        
+                } else 
+                {
+                    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>All fields are required </strong> 
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+                                echo "<meta http-equiv='refresh' content='2;URL=business-signup.php'>";
+                }
+            }
 		?>
 
             <form action="#" method="POST" enctype="multipart/form-data">
