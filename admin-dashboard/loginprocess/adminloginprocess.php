@@ -1,11 +1,11 @@
 <?php
-require('../connection/config.php');
+require('../../connection/config.php');
 if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    if ($username != "" && $password != "") {
-        $query = "SELECT * FROM bsignup WHERE username='$username' AND password='$password'";
+    if ($email != "" && $password != "") {
+        $query = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
         $result = mysqli_query($conn, $query);
         $count = mysqli_num_rows($result);
         if ($count == 1) {
@@ -14,11 +14,11 @@ if (isset($_POST['submit'])) {
             session_start();
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
 
-            echo header("Location: ../admin-dashboard/index.php?msg=login_success");
+            echo header("Location: ../index.php?msg=login_success");
         } else {
-            echo header("Location: ../business-login.php?msg=login_failed");
+            echo header("Location: ../adminlogin.php?msg=login_failed");
         }
     } else {
         echo "All fields are necessary.";
