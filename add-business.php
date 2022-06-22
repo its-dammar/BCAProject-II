@@ -1,11 +1,10 @@
-<?php
+<?php 
 
- if(isset($_SESSION['id']))
- {
-    require('secure_admin.php'); 
- }
+include("inc/header.php") ;
+
+
 ?>
-<?php include("inc/header.php") ;?>
+
 
 <body class=" " style="background-color:#A1A1A1">
 
@@ -15,7 +14,7 @@
         <div class="container bg-dark p-5 ">
             <div class="row pb-3">
                 <div class=" col-md-6 d-flex justify-content-start text-white">
-                    <h2>Add Business Free</h2>
+                    <h2>Add Business Free </h2>
                 </div>
                 <div class="col-md-6 image-register d-flex justify-content-end">
                     <img class="col-12 col-md-6" alt="Logo" src="admin/assets/images/logoblue.png" width="211"
@@ -86,6 +85,12 @@
                     }
                 }
                 ?>
+
+
+        <?php
+            if(isset($_SESSION["email"]) == true){
+            ?>
+
             <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="row">
 
@@ -103,7 +108,7 @@
                         <div class="mb-3 ">
                             <label for="exampleInputmobile" class="form-label text-white fs-5">mobile</label>
                             <input type="tel" class="form-control" name="mobile" id="exampleInputmobile"
-                            pattern="[0-9]{10}"    aria-describedby="mobileHelp">
+                                pattern="[0-9]{10}" aria-describedby="mobileHelp">
                         </div>
                         <div class="mb-3 ">
                             <label for="business_category" class="form-label text-white fs-5">Business Category</label>
@@ -155,7 +160,7 @@
                                                             style="opacity: 0;" />
                                                         <img src="<?php echo "uploads/" . $data_select['filelink']; ?>"
                                                             alt="" height="100px;" width="100px;"
-                                                            style="margin-right:20px;">
+                                                            >
                                                     </label>
                                                     <?php
 															}
@@ -225,6 +230,17 @@
                 </div>
                 <button type="submit" class="btn btn-outline-warning fs-5" name="submit">Add Business</button>
             </form>
+            <?php
+        }
+            else {
+            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>You are not login</strong>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+            echo "<meta http-equiv='refresh' content='1.5; URL=index.php'>";
+            }
+    ?>
+
         </div>
     </section>
 

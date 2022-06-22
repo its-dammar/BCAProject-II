@@ -2,7 +2,7 @@
 
 <body>
     <!-- navbar section -->
-    <?php include("inc/navbar.php"); ?>
+    <?php include("inc/navbarmain.php"); ?>
     <!-- navbar section -->
 
     <!-- slider section -->
@@ -10,14 +10,14 @@
         <div class="">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-white"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">Blogs</li>
                 </ol>
             </nav>
         </div>
     </section>
     <!-- slider section -->
-
+    <?php include("inc/navbar.php"); ?>
 
 
     <!-- Page header with logo and tagline-->
@@ -51,16 +51,16 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">Web Design</a></li>
-                                    <li><a href="#!">HTML</a></li>
-                                    <li><a href="#!">Freebies</a></li>
+                                    <li><a href="blog-detail1.php">Web Design</a></li>
+                                    <li><a href="blog-detail1.php">php</a></li>
+                                    <li><a href="blog-detail1.php">Freebies</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">JavaScript</a></li>
-                                    <li><a href="#!">CSS</a></li>
-                                    <li><a href="#!">Tutorials</a></li>
+                                    <li><a href="blog-detail1.php">JavaScript</a></li>
+                                    <li><a href="blog-detail1.php">CSS</a></li>
+                                    <li><a href="blog-detail1.php">Tutorials</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -76,12 +76,12 @@
             <div class="col-lg-8 col-md-8">
                 <!-- Featured blog post-->
                 <div class="card mb-4">
-                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                    <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
                     <div class="card-body">
                         <div class="small text-muted">January 1, 2022</div>
-                        <h2 class="card-title">Featured Post Title</h2>
+                        <a href="blog-detail1.php" class="card-title"> <h2>Featured Post Title</h2></a>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                        <a class="btn btn-primary" href="#!">Read more →</a>
+                        <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
                     </div>
                 </div>
                 <!-- Nested row for non-featured blog posts-->
@@ -89,44 +89,44 @@
                     <div class="col-lg-6">
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
+                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
                             </div>
                         </div>
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
+                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
+                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
                             </div>
                         </div>
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
+                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
-                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
                             </div>
                         </div>
                     </div>
@@ -136,12 +136,12 @@
                     <hr class="my-0" />
                     <ul class="pagination justify-content-center my-4">
                         <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">15</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">Older</a></li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="blog-detail1.php">1</a></li>
+                        <li class="page-item"><a class="page-link" href="blog-detail1.php">2</a></li>
+                        <li class="page-item"><a class="page-link" href="blog-detail1.php">3</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="blog-detail1.php">...</a></li>
+                        <li class="page-item"><a class="page-link" href="blog-detail1.php">15</a></li>
+                        <li class="page-item"><a class="page-link" href="blog-detail1.php">Older</a></li>
                     </ul>
                 </nav>
             </div>

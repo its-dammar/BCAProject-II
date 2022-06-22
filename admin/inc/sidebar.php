@@ -146,15 +146,15 @@
                 <li class="ttr-seperate"></li>
                 <li>
                     <a href="#" class="ttr-material-button">
-                        <span class="ttr-label">Course Category</span>
+                        <span class="ttr-label">Business Category</span>
                         <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
                     </a>
                     <ul>
                         <li>
-                            <a href="addcoursecategory.php" class="ttr-material-button"><span class="ttr-label">Add Course Category</span></a>
+                            <a href="addcoursecategory.php" class="ttr-material-button"><span class="ttr-label">Add Business Category</span></a>
                         </li>
                         <li>
-                            <a href="managecoursecategory.php" class="ttr-material-button"><span class="ttr-label">Manage Course Category</span></a>
+                            <a href="managecoursecategory.php" class="ttr-material-button"><span class="ttr-label">Manage Business Category</span></a>
                         </li>
                     </ul>
                 </li>

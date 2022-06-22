@@ -115,9 +115,10 @@ $data1 = $config_result->fetch_assoc();
 
                     <li>
                         <a href="#" class="ttr-material-button ttr-submenu-toggle text-white">
-                            <?php if (isset($_SESSION['name'])) {
-                                echo $_SESSION['name'];
-                                } ?><i class="ti-user"></i>
+                        <?php if (isset($_SESSION['name'])) {
+                                echo "<i class='ti-user' style='font-size:20px;' title='". $_SESSION['email']."'></i>";
+                                // echo $_SESSION['name'];
+                                } ?>
                         </a>
                         <div class="ttr-header-submenu">
                             <ul>

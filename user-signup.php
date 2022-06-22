@@ -45,11 +45,11 @@
                         $query = "INSERT INTO users (name, phone, email, password) 
                         VALUES ('$name', '$phone', '$email', '$password')";
                         echo $query;
-                        $result = mysqli_query($conn, $query);
-                        // $query1 = "INSERT INTO superusers (name,phone, email, password,confirm_password) 
-                        // VALUES ('$name', '$phone', '$email', '$password', '$confirm_password')";
+                        $query1 = "INSERT INTO superusers (name,phone, email, password) 
+                        VALUES ('$name', '$phone', '$email', '$password')";
                     
-                        // $result = mysqli_query($conn, $query1);
+                    $result = mysqli_query($conn, $query);
+                        $result = mysqli_query($conn, $query1);
                         if ($result) 
                         {
                             echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>

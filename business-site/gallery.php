@@ -10,7 +10,7 @@
         <div class="">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-white"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">Gallery</li>
                 </ol>
             </nav>

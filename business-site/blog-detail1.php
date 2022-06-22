@@ -1,7 +1,7 @@
 <?php include("inc/header.php"); ?>
 <body>
     <!-- navbar section -->
-    <?php include("inc/navbar.php"); ?>
+    <?php include("inc/navbarmain.php"); ?>
     <!-- navbar section -->
 
     <!-- slider section -->
@@ -9,15 +9,16 @@
         <div class="">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-white"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">
-                        <a href="blog.html">Blogs</a>
+                        <a href="blog.php">Blogs</a>
                     </li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">Blogs Details</li>
                 </ol>
             </nav>
         </div>
     </section>
+    <?php include("inc/navbar.php"); ?>
     <!-- slider section -->
 
     <!-- blogs section -->
@@ -231,7 +232,7 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" style="z-index:-3;">
                     <!--Section: Sidebar-->
                     <section class="sticky-top" style="top: 80px;">
                         <!--Section: Ad-->
@@ -247,7 +248,7 @@
                             <p>
                                 500+ components, free templates, 1-min installation, extensive tutorial, huge community. MIT license - free for personal & commercial use
                             </p>
-                            <a role="button" class="btn btn-primary" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download for free<i class="fas fa-download ms-2"></i></a>
+                            <a role="button" class="btn btn-primary" href="#" target="_blank">Download for free<i class="fas fa-download ms-2"></i></a>
                         </section>
                         <!--Section: Ad-->
 

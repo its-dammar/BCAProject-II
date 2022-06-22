@@ -76,7 +76,7 @@
                      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                          <!-- Links -->
                          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                         <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                         <p><i class="fas fa-home me-3"></i> Pokhara, Kaski, Nepal</p>
                          <p>
                              <i class="fas fa-envelope me-3"></i>
                              <a href="email:info@example.com">info@example.com</a>
@@ -116,13 +116,13 @@
              <div class="container">
                  <div class="row pt-3 pb-3">
                      <div class="col-md-4 footer-item fw-bold text-reset">
-                         <a href="#">© 2021 Copyright: MDBootstrap.com</a>
+                         <a href="#">© 2021 Copyright: BCoNepal</a>
                      </div>
                      <div class="col-md-4 footer-item fw-bold text-reset">
-                         <a href="#">Contributed by Dammar</a>
+                         <a href="https://dammarkhadayat.com.np/">Contributed by Dammar</a>
                      </div>
                      <div class="col-md-4 footer-item fw-bold text-reset">
-                         <a href="#">Powered By XDpage </a>
+                         <a href="#">Powered By BCoNepal </a>
                      </div>
                  </div>
              </div>

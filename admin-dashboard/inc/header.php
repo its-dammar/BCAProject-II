@@ -5,8 +5,6 @@ require('secure_admin.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from educhamp.themetrades.com/demo/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:08:15 GMT -->
-
 <?php
 $config_query = "SELECT * FROM siteconfig";
 $config_result = mysqli_query($conn, $config_query);
@@ -81,8 +79,9 @@ $data1 = $config_result->fetch_assoc();
             <div class="ttr-logo-box">
                 <div>
                     <a href="index.php" class="ttr-logo">
-                        <img class="ttr-logo-mobile" alt="" src="assets/images/bls-logopng.png" width="30" height="30">
-                        <img class="ttr-logo-desktop" alt="" src="assets/images/logoblue.png" width="160" height="27">
+                        
+                        <!-- <img class="ttr-logo-mobile" alt="" src="assets/images/bls-logopng.png" width="30" height="30">
+                        <img class="ttr-logo-desktop" alt="" src="assets/images/logoblue.png" width="160" height="27"> -->
                     </a>
                 </div>
             </div>
@@ -91,6 +90,9 @@ $data1 = $config_result->fetch_assoc();
                 <!-- header left menu start -->
                 <ul class="ttr-header-navigation">
                     <li>
+                        <a href="index.php" class="ttr-material-button ttr-submenu-toggle" style="font-size:30px">LGIC</a>
+                    </li>
+                    <li>
                         <a href="index.php" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                     </li>
                     <li>
@@ -98,8 +100,9 @@ $data1 = $config_result->fetch_assoc();
                                 class="fa fa-angle-down"></i></a>
                         <div class="ttr-header-submenu">
                             <ul>
-                                <li><a href="manageadmin.php">Admin</a></li>
-                                <li><a href="manageuser.php">User</a></li>
+                                <!-- <li><a href="manageadmin.php">Admin</a></li>
+                                <li><a href="manageuser.php">User</a></li> -->
+                                <li><a href="#">User</a></li> 
                             </ul>
                         </div>
                     </li>
@@ -116,8 +119,9 @@ $data1 = $config_result->fetch_assoc();
                     <li>
                         <a href="#" class="ttr-material-button ttr-submenu-toggle text-white">
                             <?php if (isset($_SESSION['name'])) {
-                                echo $_SESSION['name'];
-                                } ?><i class="ti-user"></i>
+                                echo "<i class='ti-user' style='font-size:20px;' title='". $_SESSION['email']."'></i>";
+                                // echo $_SESSION['name'];
+                                } ?>
                         </a>
                         <div class="ttr-header-submenu">
                             <ul>

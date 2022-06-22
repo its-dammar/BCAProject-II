@@ -91,7 +91,7 @@
                             <label class="col-form-label">Password</label>
                             <div>
                                 <input class="form-control" type="password" name="password"
-                                    value="echo $show_row['password'];" aria-describedby="helpId">
+                                    value="<?php echo $show_row['password']; ?>" aria-describedby="helpId">
                             </div>
                         </div>
                         <div class="form-group col-12 col-md-6">

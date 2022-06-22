@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="navbar-section">
+<div class="navbar-section" style="z-index:3;">
     <nav class="container-fluid navbar navbar-expand-lg navbar-dark" style="z-index:3; background-color:#444">
         <div class="container-fluid">
             <!-- side toggle -->
@@ -64,8 +64,13 @@
                         echo '<a class="nav-link text-white fs-5 btn-outline-warning" href="../user-login.php">+ Add Business</a>';
                     }
                  ?>  
-                    <a class="nav-link text-white fs-5 btn-outline-warning" href="../user-signup.php">Signup</a>
-                    <?php
+  <?php
+                    if(isset($_SESSION["email"]) != true){
+                        echo "<a class='nav-link text-white fs-5 btn-outline-warning' href='user-signup.php'>Signup </a>";
+                    }
+                     else {
+                     }
+                    ?>                    <?php
                     if(isset($_SESSION["email"]) != true){
                         echo ' <a class="nav-link text-white fs-5 btn-outline-warning" href="../user-login.php">Login</a>';
                     }
@@ -75,8 +80,14 @@
                         <a class="nav-link text-white fs-5 btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <?php if (isset($_SESSION['name'])) {
-                                echo $_SESSION['name'];
-                                } ?><i class="fa-solid fa-user"></i>
+                                $id = $_SESSION['id'];
+                                $show_query = "SELECT * FROM users WHERE id='$id'";
+                                $show_result = mysqli_query($conn, $show_query);
+                                $show_row = $show_result->fetch_assoc();
+                                // echo $_SESSION['name'];
+                                 echo "<i class='fa-solid fa-user' title='". $show_row['name']."'></i>";
+                                } 
+                                ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="../user-profile.php">profile</a></li>

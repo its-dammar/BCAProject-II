@@ -2,7 +2,7 @@
 
 <body>
     <!-- navbar section -->
-    <?php include("inc/navbar.php"); ?>
+    <?php include("inc/navbarmain.php"); ?>
     <!-- navbar section -->
 
     <!-- slider section -->
@@ -10,12 +10,13 @@
         <div class="">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-white"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">About Us</li>
                 </ol>
             </nav>
         </div>
     </section>
+    <?php include("inc/navbar.php"); ?>
     <!-- slider section -->
 
     <section class="p-5">

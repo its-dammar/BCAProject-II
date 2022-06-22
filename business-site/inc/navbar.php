@@ -25,7 +25,7 @@
                 </li>
             </ul>
             <div class="d-flex px-2">
-                <a class="nav-link text-white btn-outline-warning" href="#">Contact</a>
+                <a class="nav-link text-white btn-outline-warning" href="contact.php">Contact</a>
                 <a class="nav-link text-white  btn-outline-warning" href="tel:9876543214">Call Now</a>
             </div>
         </div>

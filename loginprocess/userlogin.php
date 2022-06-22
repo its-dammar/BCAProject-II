@@ -15,6 +15,8 @@ if (isset($_POST['submit'])) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['phone'] = $row['phone'];
+            $_SESSION['password'] = $row['password'];
 
             echo header("Location:../index.php?msg=login_success");
         } else {

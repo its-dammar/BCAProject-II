@@ -155,11 +155,76 @@
 }
 
 .slider {
-    top: 30% !important;
+    top: 40% !important;
     width: 100%;
-    position: absolute !important;
 }
 
-.form-select {
+.search-button {
+    background-color: #f5f5f5;
     border: none;
+    color: #000;
+    padding: 6.5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}
+
+.form-select1 {
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 0% !important;
+    border-top-right-radius: 0% !important;
+}
+
+.business-name {
+    background-color: beige;
+    border-bottom-right-radius: 0% !important;
+    border-top-right-radius: 0% !important;
+}
+
+.search {
+    box-shadow: rgb(245, 168, 1) 0px 20px 10px -15px, #999 0px 10px 10px -10px, #000 0px -2px 6px 0px inset;
+}
+
+.recent-listing {
+    box-shadow: rgb(245, 168, 1) 0px 20px 10px -15px, #999 0px 10px 10px -10px, #000 0px -2px 6px 0px inset;
+}
+
+.recent-listing-itens {
+    padding: 15px;
+}
+
+.recent-listing-itens:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.category-title {
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.category-business-list {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.category-business-site {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.feature-business-list {
+    box-shadow: rgb(245, 168, 1) 0px 20px 10px -15px, #999 0px 10px 10px -10px, #000 0px -2px 6px 0px inset;
+}
+
+.popular-blogs {
+    box-shadow: yellow 0px 13px 27px -5px, blue 0px 8px 16px -8px;
+}
+
+.recent-listing-items {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.feature-business-site {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

@@ -3,7 +3,9 @@
     <div class="ttr-sidebar-wrapper content-scroll">
         <!-- side menu logo start -->
         <div class="ttr-sidebar-logo">
-            <a href="index.php"><img alt="" src="assets/images/bls-logopng.png" width="122" height="27"></a>
+        <a href="index.php" class="ttr-material-button ttr-submenu-toggle" style="font-size:30px">LGIC</a>
+
+            <!-- <a href="index.php"><img alt="" src="assets/images/bls-logopng.png" width="122" height="27"></a> -->
             <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
 					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
 					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>

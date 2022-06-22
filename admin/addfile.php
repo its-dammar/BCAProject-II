@@ -38,6 +38,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 <strong>File is added successfully.</strong>
+                              <meta http-equiv="refresh" content="1.5;URL=managefile.php">
                             </div>
 
                             <script>

@@ -1,64 +1,71 @@
-
 <?php include("inc/header.php") ;?>
 
 <body class="" style="background-color:#A1A1A1">
 
-<?php include("inc/navbar.php") ;?>
+    <?php include("inc/navbar.php") ;?>
 
     <section class="m-5">
-        <div class="container col-sm-6 col-md-6 xm-auto bg-dark p-5 signup">
+        <div class="container col-sm-6 col-md-8 xm-auto bg-dark p-5 signup">
             <div class="row pb-3">
                 <div class=" col-md-6 d-flex justify-content-start text-white">
                     <h2>Your Profile</h2>
                 </div>
-                <div class="col-md-6 image-register d-flex justify-content-end">
-                    <img class="col-12 col-md-6" alt="Logo" src="admin/assets/images/logoblue.png" width="190" height="57">
+                <div class="col-md-6 d-flex justify-content-end">
+                    <?php if (isset($_SESSION['name'])) {
+                        // echo $_SESSION['name'];
+                        $id = $_SESSION['id'];
+                        $show_query = "SELECT * FROM users WHERE id=$id";
+                        $show_result = mysqli_query($conn, $show_query);
+                        $show_row = $show_result->fetch_assoc();
+                        echo "<div class='d-block'>";
+                        echo "<div>";
+                            echo " <a href='user-profile.php'class='text-white text-center'>
+                            <i class='fa-solid fa-user text-decoration-none text-center text-white'title='". $show_row['name']."' style='color:white; font-size:40px; text-align:center;'></i> </a>";
+                        echo "</div>";
+                        echo "<div>";
+                            echo " <a href='user-profile.php'class='text-decoration-none'><span class='text-white'>". $show_row['name']."</span></a>";
+                            echo "</div>";
+                    echo "</div>";
+                    }
+                        ?>
                 </div>
-                <span class="text-warning d-flex justify-content-end pt-0">Business Directory</span>
-
+                <span class="text-warning d-flex justify-content-end pt-0"> </span>
             </div>
-            <!-- <form action="loginprocess/adminloginprocess.php" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3 ">
-                            <label for="exampleInputEmail1" class="form-label text-white fs-4">Name</label>
-                            <input type="text" class="form-control" name="name" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3 ">
-                            <label for="exampleInputEmail1" class="form-label text-white fs-4">Phone</label>
-                            <input type="tel" class="form-control" name="phone" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="mb-3 ">
-                            <label for="exampleInputEmail1" class="form-label text-white fs-4">Email address</label>
-                            <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text-white fs-4">Password</label>
-                            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label text-white fs-4">Confirm
-                                Password</label>
-                            <input type="password" class="form-control" name="confirm_password"
-                                id="exampleInputPassword1">
-                        </div>
+            <div class="row pb-3">
+                <div class=" col-md-6 d-block justify-content-start text-white">
+                <?php  
+                        if(isset($_SESSION["email"]) == true){
+                                $id = $_SESSION['id'];
+                                $show_query = "SELECT * FROM users WHERE id=$id";
+                                $show_result = mysqli_query($conn, $show_query);
+                                $show_row = $show_result->fetch_assoc();
+                        }?>
+                    <div class="p-2">
+                    <h4> Name: <?php echo  $show_row ['name']; ?></h4>
+                    </div>
+                    <div class="p-2">
+                    <h4>Email: <?php echo  $show_row ['email']; ?></h4>
+                    </div>
+                    <div class="p-2">
+                    <h4>Phone: <?php echo  $show_row ['phone']; ?></h4>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label class=" text-white" for="exampleCheck1">
-                        <a href="user-login.php" class="text-warning">I Have already Account</a>
-                    </label>
+                <div class="col-md-6 d-block justify-content-end">
+                    <div class="p-2">
+                    <a href="update-profile.php" class="text-decoration-none"><h3 class="title text-warning">Update profile </h3></a>
+                    </div>
+                    <div class="p-2">
+                        <a href="your-listing.php" class="text-decoration-none"><h3 class="title text-warning">Your Listing </h3></a>
+                    </div>
+                    <div class="p-2">
+                        <a href="change-password.php" class="text-decoration-none"><h3 class="title text-warning">Change Password </h3></a>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-outline-light fs-4" name="submit">Submit</button>
+                <span class="text-warning d-flex justify-content-end pt-0"> </span>
+            </div>
 
-
-            </form> -->
+        </div>
         </div>
 
     </section>

@@ -2,7 +2,7 @@
 
 <body>
     <!-- navbar section -->
-    <?php include("inc/navbar.php"); ?>
+    <?php include("inc/navbarmain.php"); ?>
     <!-- navbar section -->
 
     <!-- slider section -->
@@ -10,15 +10,16 @@
         <div class="">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-white"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">
-                        <a href="blog.html">Blogs</a>
+                        <a href="blog.php">Blogs</a>
                     </li>
                     <li class="breadcrumb-item  text-white active" aria-current="page">Blogs Details</li>
                 </ol>
             </nav>
         </div>
     </section>
+    <?php include("inc/navbar.php"); ?>
     <!-- slider section -->
 
     <!-- blogs section -->
@@ -41,19 +42,19 @@
                     <div class="popular pt-3 pb-3">
                         <h4 class="title">Popular</h4>
                         <div class="blogs-items">
-                            <a href="blog-detail.html">XDezo Academy</a>
+                            <a href="blog-detail.php">XDezo Academy</a>
                             <div class="date p-2">
                                 <span>2022-02-02</span>
                             </div>
                         </div>
                         <div class="blogs-items">
-                            <a href="blog-detail.html">XDezo Academy</a>
+                            <a href="blog-detail.php">XDezo Academy</a>
                             <div class="date p-2">
                                 <span>2022-02-02</span>
                             </div>
                         </div>
                         <div class="blogs-items">
-                            <a href="blog-detail.html">XDezo Academy</a>
+                            <a href="blog-detail.php">XDezo Academy</a>
                             <div class="date p-2">
                                 <span>2022-02-02</span>
                             </div>
@@ -65,19 +66,19 @@
                     <div class="popular pt-3 pb-3">
                         <h4 class="title">Recent Blogs</h4>
                         <div class="blogs-items">
-                            <a href="blog-detail.html">XDezo Academy</a>
+                            <a href="blog-detail.php">XDezo Academy</a>
                             <div class="date p-2">
                                 <span>2022-02-02</span>
                             </div>
                         </div>
                         <div class="blogs-items">
-                            <a href="blog-detail.html">XDezo Academy</a>
+                            <a href="blog-detail.php">XDezo Academy</a>
                             <div class="date p-2">
                                 <span>2022-02-02</span>
                             </div>
                         </div>
                         <div class="blogs-items">
-                            <a href="blog-detail.html">XDezo Academy</a>
+                            <a href="blog-detail.php">XDezo Academy</a>
                             <div class="date p-2">
                                 <span>2022-02-02</span>
                             </div>
