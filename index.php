@@ -129,40 +129,6 @@
                     </div>
                 </div>
                 <div class="col-md-4 shadow-sm p-3 mb-5 bg-body rounded">
-                    <div class="slider pb-3">
-                        <div class="search col-md-12 xm-auto p-2">
-                            <form class="row g-3 search-form">
-                                <div class="col-md-10 p-0">
-                                    <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
-                                    <input class=" business-name form-control" id="" type="text"
-                                        placeholder="Search business as Category" aria-label="">
-
-                                </div>
-                                <div class="col-md-2 p-0 4">
-                                    <button type="button" class="btn btn-warning form-control  search-button">
-                                        <i class="fas fa-search p-1 border-start-0"></i>
-                                    </button>
-
-                                </div>
-                                <div class="col-md-12 p-0">
-                                    <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
-                                    <select id="inputProvience" class="form-control form-select1 " style="width:100%">
-                                        <option selected>Select Category</option>
-                                        <?php
-                                            $category="select *from course_category";
-                                            $c_result= mysqli_query($conn, $category);
-                                            while($catagory_data=mysqli_fetch_array( $c_result)){
-                                            ?>
-
-                                        <option value="Gandaki"><?php echo $catagory_data['name']; ?></option>
-                                        <?php
-                                }
-                                ?>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <h3 class="p-2">Recent added Category</h3>
                     <?php
                            $category="SELECT * from course_category order by created_at DESC limit 3";
