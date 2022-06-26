@@ -105,10 +105,12 @@
 															while ($data_select = mysqli_fetch_array($select_result)) {
 																$i++;
 															?>
-																<label>
+															<div class="col-md-4 p-2">
+															<label>
 																	<input type="radio" name="filename1" value="<?php echo $data_select['filelink']; ?>" style="opacity: 0;" />
 																	<img src="<?php echo "../uploads/" . $data_select['filelink']; ?>" alt="" height="100px;" width="100px;" style="margin-right:20px;">
 																</label>
+															</div>
 															<?php
 															}
 															?>

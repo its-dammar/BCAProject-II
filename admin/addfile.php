@@ -13,6 +13,7 @@
         </div>
 
         <?php
+        
         if (isset($_POST['submit'])) {
             $fname = $_POST['name'];
             $dataFile = $_FILES['dataFile']['name'];
@@ -27,9 +28,10 @@
             $ftype = $_POST['type'];
 
             if ($filesize <= 3000000) {
-                if ($extention == 'jpg' || $extention == 'JPG' || $extention == 'PNG' || $extention == 'png' || $extention == 'jpeg') {
+                if ($extention == 'jpg' || $extention == 'JPG' || $extention == 'png' || $extention == 'PNG' || $extention == 'png' || $extention == 'jpeg') {
                     if (move_uploaded_file($_FILES['dataFile']['tmp_name'], "../uploads/" . $finalfile)) {
-                        $query = "INSERT INTO filemanager(name,filelink,type) VALUES ('$fname','$finalfile','$ftype')";
+                        $query = "INSERT INTO filemanager(name,filelink,type) 
+                        VALUES ('$fname','$finalfile','$ftype')";
                         $result = mysqli_query($conn, $query);
                         if ($result) {
         ?>

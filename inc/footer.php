@@ -58,7 +58,7 @@
                          <!-- Links -->
                          <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
                          <p>
-                             <a href="blog.php" class="text-reset">Blogs</a>
+                             <a href="business-site/blog.php" class="text-reset">Blogs</a>
                          </p>
                          <p>
                              <a href="#!" class="text-reset">Settings</a>
@@ -83,11 +83,11 @@
                          </p>
                          <p>
                              <i class="fas fa-phone me-3"></i>
-                             <a href="tel:+ 01 234 567 88"> + 01 234 567 88</a>
+                             <a href="tel:+ 01 234 567 88"> + 977 9848247653</a>
                          </p>
                          <p>
                              <i class="fas fa-print me-3"></i>
-                             <a href="tel:+ 01 234 567 88"> + 01 234 567 88</a>
+                             <a href="tel:+ 01 234 567 88">  + 977 9848247653</a>
                          </p>
                      </div>
                      <!-- Grid column -->

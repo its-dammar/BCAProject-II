@@ -113,7 +113,8 @@
                                                             while ($data_select = mysqli_fetch_array($select_result)) {
                                                                 $i++;
                                                             ?>
-                                                            <label>
+                                                          <div class="clo-md-4 p-2">
+                                                          <label>
                                                                 <input type="radio" name="filename1"
                                                                     value="<?php echo $data_select['filelink']; ?>"
                                                                     style="opacity: 0;" />
@@ -121,6 +122,7 @@
                                                                     alt="" height="100px;" width="100px;"
                                                                     style="margin-right:20px;">
                                                             </label>
+                                                          </div>
                                                             <?php
                                                             }
                                                             ?>

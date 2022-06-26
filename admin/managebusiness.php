@@ -14,7 +14,7 @@
             </ul>
         </div>
 
-        <button class="btn-primary mb-2 mr-1 px-2 rounded" onClick="window.location.href='addindex.php';"><i class="fa fa-plus"></i></button>
+        <button class="btn-primary mb-2 mr-1 px-2 rounded" onClick="window.location.href='addbusiness.php';"><i class="fa fa-plus"></i></button>
         <button class="btn-primary mb-2  px-2 rounded" onClick="window.location.reload();"><i class="fa fa-refresh"></i></button>
 
         <?php

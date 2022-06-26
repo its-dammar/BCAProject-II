@@ -1,33 +1,6 @@
 <?php include("inc/header.php") ;?>
 
 <body class="" style="background-color:#A1A1A1">
-    <style>
-    .pagination-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #999;
-    }
-
-    .pagination ul {
-        background-color: red;
-    }
-
-    .pagination ul li {
-        list-style: none;
-        display: inline-block;
-        padding: 10px 20px;
-    }
-
-    ul li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    ul li a:hover {
-        color: yellow;
-    }
-    </style>
 
     <?php include("inc/navbar.php") ;?>
 
@@ -76,7 +49,7 @@
             </div>
             <!-- pagination -->
             <?php
-            $limit = 3;  // Number of entries to show in a page. Look for a GET variable page if not found default is 1.     
+            $limit = 6;  // Number of entries to show in a page. Look for a GET variable page if not found default is 1.     
             if (isset($_GET["page"])) { 
             $pn  = $_GET["page"]; 
             } 
@@ -86,10 +59,11 @@
         
             $start_from = ($pn-1) * $limit;  
         
-            $sql = "SELECT * FROM businesslists LIMIT $start_from, $limit";  
+            $sql = "SELECT * FROM businesslists order by id DESC  LIMIT $start_from, $limit";  
             $rs_result = mysqli_query($conn, $sql); 
             ?>
             <!-- pagination -->
+
             <div class="your-listing">
                 <div class="row">
                     <div class="col-md-12 m-auto">
@@ -101,7 +75,7 @@
                                     while($row = mysqli_fetch_assoc($rs_result)) {
                                         echo '<div class="listing  fs-5 p-3">';
                                     
-                                    echo " <a href='business-login.php' class='text-decoration-none'>".  "<h3>".$row['business_name']. "</h3>" ."</a>" ;
+                                    echo " <a href='admin-dashboard/index.php' class='text-decoration-none'>".  "<h3>".$row['business_name']. "</h3>" ."</a>" ;
                                     echo " <span class=''>".  $row['business_category'] ."</span>" ;
                                     "</div>";
                                         echo '</div>';

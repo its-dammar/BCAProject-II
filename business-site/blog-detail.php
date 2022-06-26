@@ -22,6 +22,7 @@
     <?php include("inc/navbar.php"); ?>
     <!-- slider section -->
 
+
     <!-- blogs section -->
     <section class="pt-5 pb-5 ">
         <div class="container">
@@ -104,35 +105,21 @@
                 </div>
                 <div class="col-md-9 col-sm-6">
                     <div class="row text-center">
+                    <?php
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            $show_query = "SELECT * FROM blogs WHERE id ='$id'";
+                            $show_result = mysqli_query($conn, $show_query);
+                            $show_row = $show_result->fetch_assoc();
+                        }
+                        ?>
                         <div class="col-md-12 container mb-md-0">
                             <div class="d-flex justify-content-center mb-4">
-                                <img class="blog-details" src="assets/uploads/3.jpg" class=" shadow-1-strong" width="100%" height="400" />
+                                <img class="blog-details" src="<?php echo "../uploads/" . $show_row['img']; ?>" class=" shadow-1-strong" width="100%" height="400" />
                             </div>
-                            <h5 class="mb-3">Top 10 programming language</h5>
-                            <h6 class="text-primary mb-3">2022-02-12</h6>
-                            <p class="" style="text-align:justify;">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sed, placeat illum accusamus explicabo neque nesciunt commodi minima totam ipsum fuga odit consequatur magni voluptatibus magnam veritatis voluptatem temporibus consequuntur quod id aliquid!
-                                Facere quaerat accusantium atque. Officia numquam error atque consequuntur facilis inventore consectetur ducimus et repellat sapiente velit illo eum vitae laborum iste veniam, voluptas vel tempora. Saepe iure neque officiis
-                                <br> <br> </p>
-
-                            <p>pexercitationem repellendus. Perspiciatis consequuntur consectetur molestiae, quo possimus veritatis tempore aperiam obcaecati iste cumque voluptatem itaque, dignissimos ipsa, explicabo commodi non voluptatibus fuga quos. Fugiat
-                                doloremque aliquid eaque, voluptate modi sunt quaerat iure id illo, voluptatum cumque iusto nostrum voluptas eum iste repudiandae in optio mollitia ut eligendi et porro exercitationem fugit. Culpa nostrum autem corporis!
-                                Quaerat animi laboriosam atque dolore facilis corrupti dignissimos. Ullam ea quaerat eaque incidunt ipsum labore nihil, perferendis at odio omnis amet, maxime eos, inventore ut totam aspernatur! Doloribus sit nemo perspiciatis
-                                aliquid iusto. Repellat animi voluptate natus unde vitae quam maxime esse expedita commodi. Vitae expedita harum mollitia aliquid sapiente! Rerum repellendus autem animi optio unde suscipit facere omnis veniam modi distinctio
-                                recusandae nostrum laudantium quidem consequuntur, inventore, deleniti atque pariatur maxime magni illum. Autem suscipit aspernatur modi laborum sed laudantium illo ab soluta minima numquam, esse quis recusandae, saepe
-                                <br><br></p>
-
-                            </p> pariatur tempora dolor corporis laboriosam fugit quae cupiditate ullam at sint! Iure natus, necessitatibus voluptate qui aut fugit vitae unde suscipit repellat ipsam nostrum eveniet esse sunt repellendus totam veniam consequuntur
-                            nobis obcaecati, perspiciatis magnam delectus excepturi facere labore. Rerum in dolores laborum! Culpa iure placeat consequuntur. Hic ipsum ratione aliquam nihil totam aut commodi saepe earum unde similique amet, praesentium
-                            exercitationem, dignissimos perspiciatis tempore veniam optio. Officia natus minus, perspiciatis omnis et totam nemo commodi voluptatibus error amet, a voluptas eaque laboriosam ad ducimus dolores deserunt nam. Nesciunt distinctio
-                            placeat dolorum accusamus, exercitationem quam necessitatibus magnam quidem rem, culpa libero. Magni natus ex, nihil alias distinctio quisquam accusantium neque quasi aspernatur aliquid obcaecati hic mollitia perspiciatis nulla
-                            asperiores nostrum maxime incidunt placeat iusto quibusdam sint omnis culpa! Corrupti nemo quo cupiditate ad repellat adipisci quaerat sint autem recusandae assumenda, ipsam quibusdam saepe ullam. Vitae aliquid vel, voluptas
-                            ut aspernatur repellendus assumenda dolorem similique voluptatem ullam ratione suscipit tenetur quae quasi praesentium neque qui natus vero deleniti, libero, laboriosam eaque quam? Minima non amet quos enim fugit rerum atque
-                            necessitatibus, deserunt placeat laboriosam ratione, explicabo eveniet, omnis dicta dignissimos iure dolores illo? Dolorem esse ducimus eius quibusdam minus nobis blanditiis! Labore quo sequi<br><br> quisquam unde accusantium,
-                            ea non dolorum molestias ipsum nemo fugiat eius deleniti adipisci reiciendis odio, nam voluptatum. Rerum porro perferendis consequatur temporibus. Facilis adipisci error cumque quod pariatur nemo est quis incidunt reprehenderit
-                            nobis. Vitae omnis mollitia saepe praesentium eligendi dolore sapiente. Voluptate aspernatur sed amet error, aut fugiat eos ea eveniet magni illum mollitia placeat recusandae omnis hic reprehenderit quidem odit voluptatibus
-                            in soluta quae esse? Magnam laudantium voluptate commodi adipisci at nobis excepturi consequuntur sapiente quibusdam. Quidem, fuga! Beatae harum, eligendi explicabo qui quod corporis quo.
-                            </p>
+                            <h5 class="mb-3">><?php echo $show_row['title']; ?></h5>
+                            <h6 class="text-primary mb-3">Date: <?php $time = $show_row['created_at'];echo $time = date("d-m-Y", strtotime($time)); ?></h6>
+                            <p class="" style="text-align:justify;"><?php echo $show_row['content']; ?> </p>
 
                         </div>
                     </div>

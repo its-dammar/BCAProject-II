@@ -80,12 +80,12 @@
                         <a class="nav-link text-white fs-5 btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <?php if (isset($_SESSION['name'])) {
-                                $id = $_SESSION['id'];
-                                $show_query = "SELECT * FROM users WHERE id='$id'";
-                                $show_result = mysqli_query($conn, $show_query);
-                                $show_row = $show_result->fetch_assoc();
+                                 $id = $_SESSION['id'];
+                                 $show_query = "SELECT * FROM users WHERE id=$id";
+                                 $show_result = mysqli_query($conn, $show_query);
+                                 $show_row = $show_result->fetch_assoc();
                                 // echo $_SESSION['name'];
-                                 echo "<i class='fa-solid fa-user' title='". $show_row['name']."'></i>";
+                                echo "<i class='fa-solid fa-user' title='". $_SESSION['name']."'></i>";
                                 } 
                                 ?>
                         </a>

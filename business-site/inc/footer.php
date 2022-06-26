@@ -83,11 +83,11 @@
                          </p>
                          <p>
                              <i class="fas fa-phone me-3"></i>
-                             <a href="tel:+ 01 234 567 88"> + 01 234 567 88</a>
+                             <a href="tel:+ 01 234 567 88">  + 977 9848247653</a>
                          </p>
                          <p>
                              <i class="fas fa-print me-3"></i>
-                             <a href="tel:+ 01 234 567 88"> + 01 234 567 88</a>
+                             <a href="tel:+ 01 234 567 88">  + 977 9848247653</a>
                          </p>
                      </div>
                      <!-- Grid column -->

@@ -10,26 +10,16 @@
         <div class="container slider " style=" position: relative !important;">
             <h3 class="text-center text-white fs-2">Search Business</h3>
             <div class="search container col-md-6 xm-auto p-2 ">
-                <form class="row g-3 search-form">
-                    <div class="col-md-5 p-0">
+            <form class="row g-3 search-form" method="POST">
+                    <div class="col-md-10 p-0">
                         <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
-                        <input class=" business-name form-control" id="" type="text" placeholder="type business name"
-                            aria-label="">
+                        <input class=" business-name form-control" id="" name="business_category" type="text"
+                            placeholder="Type business category like college, hospital, training center " aria-label="">
                     </div>
-                    <div class="col-md-5 p-0">
-                        <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
-                        <select id="inputProvience" class="form-control form-select1 " style="width:100%">
-                            <option selected>Category</option>
-                            <option value="Gandaki">Gandaki</option>
-                            <option value="Karnali">Karnaki</option>
-                            <option value="Sudurpachim">Sudurpachim</option>
-                            <option value="1">1</option>
-                        </select>
-                    </div>
-                    <div class="col-md-1 p-0 4">
-                        <button type="button" class="btn btn-warning form-control  search-button">
+                    <div class="col-md-2 p-0 4">
+                       <a href="#search"> <button type="submit" class="btn btn-warning form-control  search-button">
                             <i class="fas fa-search p-1 border-start-0"></i>
-                        </button>
+                        </button></a>
 
                     </div>
                 </form>
@@ -46,79 +36,58 @@
                     <h3 class="mb-4 category-title">Recent Listing Business</h3>
                 </div>
             </div>
+            <div class="row" id="search">
+            <?php
+                $name = $_POST['business_category'];
+                if($name!="")
+                {
+
+                    $sql = " SELECT * FROM businesslists where business_category like '%$name%'";
+                    $result = mysqli_query($conn, $sql);
+                        if ($result->num_rows > 0)
+                        {
+                            while($row = $result->fetch_assoc() )
+                            {
+                                ?>
+                                <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens">
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <img src="<?php echo "uploads/" . $row['logo']; ?>" class=" shadow-1-strong "
+                                            width="150" height="50" />
+                                    </div>
+                                    <a href="business-site/index.php" class="text-decoration-none">
+                                        <h5 class="mb-3 text-center"><?php echo $row['business_name']; ?></h5>
+                                    </a>
+                                    <h6 class="text-primary mb-3 text-center"><?php echo $row['business_category']; ?></h6>
+                                </div>
+                                <?php
+                            }
+                        } else 
+                        { echo "0 records"; }
+                }
+                else{ }
+                    ?>
+            </div>
             <div class="row text-center pt-3 pb-5">
+                <?php
+                $category="SELECT  * FROM businesslists ORDER BY created_at DESC limit 6";
+                $c_result= mysqli_query($conn, $category);
+                while($business_category=mysqli_fetch_array( $c_result)){
+                ?>
                 <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens">
                     <div class="d-flex justify-content-center mb-4">
-                        <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
+                        <img src="<?php echo "uploads/" . $business_category['logo']; ?>" class=" shadow-1-strong "
+                            width="150" height="50" />
                     </div>
                     <a href="business-site/index.php" class="text-decoration-none">
-                        <h5 class="mb-3">Maria Smantha</h5>
+                        <h5 class="mb-3"><?php echo $business_category['business_name']; ?></h5>
                     </a>
-                    <h6 class="text-primary mb-3">Web Developer</h6>
+                    <h6 class="text-primary mb-3"><?php echo $business_category['business_category']; ?></h6>
                     <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
                     <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
                     <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens ">
-                    <div class="d-flex justify-content-center mb-4">
-                        <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                    </div>
-                    <a href="business-site/index.php" class="text-decoration-none">
-                        <h5 class="mb-3">Maria Smantha</h5>
-                    </a>
-                    <h6 class="text-primary mb-3">Web Developer</h6>
-                    <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens ">
-                    <div class="d-flex justify-content-center mb-4">
-                        <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                    </div>
-                    <a href="business-site/index.php" class="text-decoration-none">
-                        <h5 class="mb-3">Maria Smantha</h5>
-                    </a>
-                    <h6 class="text-primary mb-3">Web Developer</h6>
-                    <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens ">
-                    <div class="d-flex justify-content-center mb-4">
-                        <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                    </div>
-                    <a href="business-site/index.php" class="text-decoration-none">
-                        <h5 class="mb-3">Maria Smantha</h5>
-                    </a>
-                    <h6 class="text-primary mb-3">Web Developer</h6>
-                    <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens ">
-                    <div class="d-flex justify-content-center mb-4">
-                        <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                    </div>
-                    <a href="business-site/index.php" class="text-decoration-none">
-                        <h5 class="mb-3">Maria Smantha</h5>
-                    </a>
-                    <h6 class="text-primary mb-3">Web Developer</h6>
-                    <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 mb-5 mb-md-0 recent-listing-itens ">
-                    <div class="d-flex justify-content-center mb-4">
-                        <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                    </div>
-                    <a href="business-site/index.php" class="text-decoration-none">
-                        <h5 class="mb-3">Maria Smantha</h5>
-                    </a>
-                    <h6 class="text-primary mb-3">Web Developer</h6>
-                    <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                    <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                </div>
+                <?php 
+            }?>
             </div>
             <div class="more-btn pb-5 text-center">
                 <a href="recentlisting-business.php" class="btn btn-secondary">More..</a>
@@ -127,7 +96,7 @@
     </section>
     <!-- recent listing Business -->
 
-    <!-- Popular Business -->
+    <!-- Category Business -->
     <section class="pt-5 category-business-site">
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -138,67 +107,36 @@
             <div class="row text-center pt-3 pb-5">
                 <div class="col-md-8">
                     <div class="row">
+                        <?php
+                        $category="SELECT * FROM course_category ORDER BY created_at DESC limit 16";
+                        $c_result= mysqli_query($conn, $category);
+                        while($business_category=mysqli_fetch_array( $c_result)){
+                        ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-category.php" class="text-decoration-none">
+                                <h5 class="mb-3"><?php echo $business_category['name']; ?></h5>
+                                <span class="text-black mb-3"> Date:
+                            <?php $time = $business_category['created_at'];echo $time = date("d-m-Y", strtotime($time)); ?>
+                            </span>
                             </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
+                            <p>244</p>
+                            
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
-                            </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
-                            </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
-                            </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                        </div>
+                        <?php }?>
                     </div>
                     <div class="more-btn p-5 text-center">
                         <a href="business-category.php" class="btn btn-secondary">More..</a>
                     </div>
                 </div>
-                <div class="col-md-4 shadow-sm p-3 mb-5 bg-body rounded" >
-                    <div class="slider pb-3" >
+                <div class="col-md-4 shadow-sm p-3 mb-5 bg-body rounded">
+                    <div class="slider pb-3">
                         <div class="search col-md-12 xm-auto p-2">
                             <form class="row g-3 search-form">
                                 <div class="col-md-10 p-0">
                                     <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
                                     <input class=" business-name form-control" id="" type="text"
                                         placeholder="Search business as Category" aria-label="">
+
                                 </div>
                                 <div class="col-md-2 p-0 4">
                                     <button type="button" class="btn btn-warning form-control  search-button">
@@ -206,29 +144,45 @@
                                     </button>
 
                                 </div>
+                                <div class="col-md-12 p-0">
+                                    <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
+                                    <select id="inputProvience" class="form-control form-select1 " style="width:100%">
+                                        <option selected>Select Category</option>
+                                        <?php
+                                            $category="select *from course_category";
+                                            $c_result= mysqli_query($conn, $category);
+                                            while($catagory_data=mysqli_fetch_array( $c_result)){
+                                            ?>
+
+                                        <option value="Gandaki"><?php echo $catagory_data['name']; ?></option>
+                                        <?php
+                                }
+                                ?>
+                                    </select>
+                                </div>
                             </form>
                         </div>
                     </div>
+                    <h3 class="p-2">Recent added Category</h3>
+                    <?php
+                           $category="SELECT * from course_category order by created_at DESC limit 3";
+                           $c_result= mysqli_query($conn, $category);
+                           while($business_category=mysqli_fetch_array( $c_result)){
+                            ?>
                     <div class="recent-listing-items p-2">
                         <a href="business-site/index.php" class="text-decoration-none">
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <h5 class="mb-3"><?php echo $business_category['name']  ?></h5>
                         </a>
-                        <span class="text-primary mb-3">Web Developer</span>
-                        <span>Date: 2021-02-02</span>
+                        <span class="text-black mb-3"> Date:
+                            <?php $time = $business_category['created_at'];echo $time = date("d-m-Y", strtotime($time)); ?></span>
                     </div>
-                    <div class="recent-listing-items p-2">
-                        <a href="business-site/index.php" class="text-decoration-none">
-                            <h5 class="mb-3">Maria Smantha</h5>
-                        </a>
-                        <span class="text-primary mb-3">Web Developer</span>
-                        <span>Date: 2021-02-02</span>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
 
         </div>
     </section>
-    <!-- Popular Business -->
+    <!-- Category Business -->
 
     <!-- Featured Listing -->
     <section class="pt-5 feature-business-site">
@@ -330,91 +284,41 @@
             <div class="row text-center pt-3 pb-5">
                 <div class="col-md-8">
                     <div class="row">
+                    <?php
+                        $category="select *from blogs limit 8";
+                        $c_result= mysqli_query($conn, $category);
+                        while($business_category=mysqli_fetch_array( $c_result)){
+                        ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
                             <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
+                                <img src="<?php echo "uploads/" . $business_category['img']; ?>" class=" shadow-1-strong" width="150" height="50" />
                             </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
+                            <a href="business-site/blog-detail.php" class="text-decoration-none">
+                                <h5 class="mb-3"><?php echo $business_category['title'];?></h5>
                             </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
+                            <h6 class="text-black mb-3"> Date:<?php $time = $business_category['created_at']; echo $time = date("d-m-Y", strtotime($time)); ?></h6>
+                            <!-- <p style="max-width: 280px"><?php echo $business_category['content'] ;?></p> -->
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
-                            </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
-                            </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-5 mb-md-0 recent-listing-itens">
-                            <div class="d-flex justify-content-center mb-4">
-                                <img src="assets/uploads/1.jpg" class=" shadow-1-strong" width="150" height="50" />
-                            </div>
-                            <a href="business-site/index.php" class="text-decoration-none">
-                                <h5 class="mb-3">Maria Smantha</h5>
-                            </a>
-                            <h6 class="text-primary mb-3">Web Developer</h6>
-                            <a href="#"><i title="Phone" class="fas fa-phone fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Location" class="fas fa-location fa-lg text-primary"></i></a>
-                            <a href="#"><i title="Email" class="fas fa-inbox fa-lg text-primary"></i></a>
-                        </div>
+                        <?php }?>
                     </div>
                     <div class="more-btn p-5 text-center">
-                        <a href="reviews.html" class="btn btn-secondary">More..</a>
+                        <a href="blogs.php" class="btn btn-secondary">More..</a>
                     </div>
                 </div>
                 <div class="col-md-4 shadow-sm p-3 mb-5 bg-body rounded">
-                <div class="slider pb-5" >
-                        <div class="search col-md-12 xm-auto p-2">
-                            <form class="row g-3 search-form">
-                                <div class="col-md-10 p-0">
-                                    <!-- <label for="inputProvience" class="form-label text-white fs-2">Choose Proviece</label> -->
-                                    <input class=" business-name form-control" id="" type="text"
-                                        placeholder="Search Popular Blogs" aria-label="">
-                                </div>
-                                <div class="col-md-2 p-0 4">
-                                    <button type="button" class="btn btn-warning form-control  search-button">
-                                        <i class="fas fa-search p-1 border-start-0"></i>
-                                    </button>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="recent-listing-items p-2">
+                    <h3 class="shadow p-3">Recent Blogs</h3>
+                    <?php
+                           $category="select *from blogs limit 3";
+                           $c_result= mysqli_query($conn, $category);
+                           while($business_category=mysqli_fetch_array( $c_result)){
+                            ?>
+                        <div class="recent-listing-items p-2">
                         <a href="business-site/index.php" class="text-decoration-none">
-                            <h5 class="mb-3">Maria Smantha</h5>
+                            <h5 class="mb-3"><?php echo $business_category['title']  ?></h5>
                         </a>
-                        <span class="text-primary mb-3">Web Developer</span>
-                        <span>Date: 2021-02-02</span>
+                        <span class="text-black mb-3"> Date: <?php $time = $business_category['created_at'];echo $time = date("d-m-Y", strtotime($time)); ?></span>
                     </div>
-                    <div class="recent-listing-items p-2">
-                        <a href="business-site/index.php" class="text-decoration-none">
-                            <h5 class="mb-3">Maria Smantha</h5>
-                        </a>
-                        <span class="text-primary mb-3">Web Developer</span>
-                        <span>Date: 2021-02-02</span>
-                    </div>
+                            <?php } ?>
                 </div>
             </div>
 

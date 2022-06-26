@@ -21,6 +21,38 @@
 }
 
 
+/* pagination */
+
+.pagination-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 228, 228);
+}
+
+.pagination ul {
+    background-color: red;
+}
+
+.pagination ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.pagination li a {
+    color: rgb(12, 2, 2);
+    text-decoration: none;
+}
+
+.pagination li a:hover {
+    color: rgb(64, 15, 210);
+}
+
+
+/* pagination */
+
+
 /* @media screen and (max-width:767px) {
     .offcanvas {
         max-width: 200px;

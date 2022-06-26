@@ -44,12 +44,10 @@
                     else{
                         $query = "INSERT INTO users (name, phone, email, password) 
                         VALUES ('$name', '$phone', '$email', '$password')";
-                        echo $query;
-                        $query1 = "INSERT INTO superusers (name,phone, email, password) 
-                        VALUES ('$name', '$phone', '$email', '$password')";
+                   
+                      
                     
                     $result = mysqli_query($conn, $query);
-                        $result = mysqli_query($conn, $query1);
                         if ($result) 
                         {
                             echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
@@ -112,12 +110,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label text-white fs-4">Password</label>
-                            <input type="text" class="form-control" name="password" id="exampleInputPassword1">
+                            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label text-white fs-4">Confirm
                                 Password</label>
-                            <input type="text" class="form-control" name="confirm_password" id="exampleInputPassword1">
+                            <input type="password" class="form-control" name="confirm_password" id="exampleInputPassword1">
                         </div>
                     </div>
                 </div>

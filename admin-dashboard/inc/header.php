@@ -95,23 +95,24 @@ $data1 = $config_result->fetch_assoc();
                     <li>
                         <a href="index.php" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                     </li>
-                    <li>
-                        <a href="#" class="ttr-material-button ttr-submenu-toggle">Setting <i
-                                class="fa fa-angle-down"></i></a>
-                        <div class="ttr-header-submenu">
-                            <ul>
-                                <!-- <li><a href="manageadmin.php">Admin</a></li>
-                                <li><a href="manageuser.php">User</a></li> -->
-                                <li><a href="#">User</a></li> 
-                            </ul>
-                        </div>
-                    </li>
+                   
                 </ul>
                 <!-- header left menu end -->
             </div>
             <div class="ttr-header-right ttr-with-seperator">
                 <!-- header right menu start -->
                 <ul class="ttr-header-navigation">
+                <li>
+                        <a href="#" class="ttr-material-button ttr-submenu-toggle">Setting <i
+                                class="fa fa-angle-down"></i></a>
+                        <div class="ttr-header-submenu">
+                            <ul>
+                                <!-- <li><a href="manageadmin.php">Admin</a></li>
+                                <li><a href="manageuser.php">User</a></li> -->
+                                <li><a href="adduser.php">User</a></li> 
+                            </ul>
+                        </div>
+                    </li>
                     <li>
                         <a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"></i></a>
                     </li>

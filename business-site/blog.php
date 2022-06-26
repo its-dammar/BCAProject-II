@@ -74,62 +74,29 @@
             </div>
             <!-- Blog entries-->
             <div class="col-lg-8 col-md-8">
-                <!-- Featured blog post-->
-                <div class="card mb-4">
-                    <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                    <div class="card-body">
-                        <div class="small text-muted">January 1, 2022</div>
-                        <a href="blog-detail1.php" class="card-title"> <h2>Featured Post Title</h2></a>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                        <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
-                    </div>
-                </div>
                 <!-- Nested row for non-featured blog posts-->
                 <div class="row">
-                    <div class="col-lg-6">
-                        <!-- Blog post-->
-                        <div class="card mb-4">
-                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                    <!-- Blog post-->
+                    <?php
+                        $category="SELECT * FROM blogs";
+                        $c_result= mysqli_query($conn, $category);
+                        while($business_category=mysqli_fetch_array( $c_result)){
+                    ?>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="card mb-4 d-flex">
+                            <a href="blog-detail.php">
+                                <img class="card-img-top" src="<?php echo "../uploads/" . $business_category['img']; ?>" alt="..." width="200" height="200"/>
+                            </a>
                             <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
+                                <div class="small text-muted">Date: 
+                                    <?php $time = $business_category['created_at'];echo $time = date("d-m-Y", strtotime($time)); ?>
+                                </div>
+                                <a href="blog-detail.php" class="card-title h4"><?php echo $business_category['title']  ?></a>
                             </div>
-                        </div>
-                        <!-- Blog post-->
-                        <div class="card mb-4">
-                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                            <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
-                            </div>
+                            <a class="btn btn-primary col-4 xm-auto text-center" href="blog-detail.php?id=<?php echo $business_category['id'];?>">Read more →</a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <!-- Blog post-->
-                        <div class="card mb-4">
-                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                            <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
-                            </div>
-                        </div>
-                        <!-- Blog post-->
-                        <div class="card mb-4">
-                            <a href="blog-detail1.php"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                            <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <a href="blog-detail1.php" class="card-title h4">Post Title</a>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
-                                <a class="btn btn-primary" href="blog-detail1.php">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
+                        <?php }?>
                 </div>
                 <!-- Pagination-->
                 <nav aria-label="Pagination">
@@ -148,8 +115,5 @@
 
         </div>
     </div>
-
-
-
-
+    
     <?php include("inc/footer.php"); ?>

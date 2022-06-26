@@ -87,7 +87,7 @@ include("inc/header.php") ;
                 ?>
 
 
-        <?php
+            <?php
             if(isset($_SESSION["email"]) == true){
             ?>
 
@@ -112,12 +112,18 @@ include("inc/header.php") ;
                         </div>
                         <div class="mb-3 ">
                             <label for="business_category" class="form-label text-white fs-5">Business Category</label>
-                            <select id="inputprovince" class="form-select form-select1" name="business_category"
+                            <select id="inputProvience" class="form-control form-select1 " name="business_category"
                                 style="width:100%">
-                                <option selected>Business Category</option>
-                                <option value="bancking">Banking</option>
-                                <option value="training center">Training Center</option>
-                                <option value="college">College</option>
+                                <option disabled selected>Select Category</option>
+                                <?php
+                                $category="select *from course_category";
+                                $c_result= mysqli_query($conn, $category);
+                                while($catagory_data=mysqli_fetch_array( $c_result)){
+                            ?>
+                                <option value="Gandaki"><?php echo $catagory_data['name']; ?></option>
+                                <?php
+                        }
+                        ?>
                             </select>
                         </div>
                         <div class="mb-3 ">
@@ -154,14 +160,16 @@ include("inc/header.php") ;
 															$select_result = mysqli_query($conn, $select_query);
 															while ($data_select = mysqli_fetch_array($select_result)) {
 															?>
-                                                    <label>
-                                                        <input type="radio" name="logo"
-                                                            value="<?php echo $data_select['filelink']; ?>"
-                                                            style="opacity: 0;" />
-                                                        <img src="<?php echo "uploads/" . $data_select['filelink']; ?>"
-                                                            alt="" height="100px;" width="100px;"
-                                                            >
-                                                    </label>
+                                                    <div class="col-md-4 p-2">
+                                                        <label>
+                                                            <input type="radio" name="logo"
+                                                                value="<?php echo $data_select['filelink']; ?>"
+                                                                style="opacity: 0;" />
+                                                            <img class="border"
+                                                                src="<?php echo "uploads/" . $data_select['filelink']; ?>"
+                                                                alt="" height="100px;" width="100px;">
+                                                        </label>
+                                                    </div>
                                                     <?php
 															}
 															?>
@@ -189,28 +197,53 @@ include("inc/header.php") ;
                     <div class="col-md-6">
                         <div class="mb-3 ">
                             <label for="country" class="form-label text-white fs-5">Country</label>
-                            <select id="country" class="form-select form-select1" name="country" style="width:100%">
-                                <option selected>country</option>
-                                <option value="nepal">Nepal</option>
-                                <option value="china">China</option>
-                                <option value="india">India</option>
+                            <select id="inputCountry" class="form-control form-select1 " name="country"
+                                style="width:100%">
+                                <option disabled selected>Select Country</option>
+                                <?php
+                                $category="SELECT *from options";
+                                $c_result= mysqli_query($conn, $category);
+                                while($catagory_data=mysqli_fetch_array( $c_result)){
+                            ?>
+                                <option value="<?php echo $catagory_data['country']; ?>">
+                                    <?php echo $catagory_data['country']; ?></option>
+                                <?php
+                        }
+                        ?>
                             </select>
                         </div>
                         <div class="mb-3 ">
                             <label for="province" class="form-label text-white fs-5">province</label>
-                            <select id="province" class="form-select form-select1" name="province" style="width:100%">
-                                <option selected>Choose Proviece</option>
-                                <option value="gamdaki">Gandaki</option>
-                                <option value="suderpachim">Sudurpachim</option>
-                                <option value="karnali">Karnali</option>
+                            <select id="inputProvience" class="form-control form-select1 " name="province"
+                                style="width:100%">
+                                <option disabled selected>Select Province</option>
+                                <?php
+                                $category="SELECT * from options";
+                                $c_result= mysqli_query($conn, $category);
+                                while($catagory_data=mysqli_fetch_array( $c_result)){
+                            ?>
+                                <option value="<?php echo $catagory_data['province']; ?>">
+                                    <?php echo $catagory_data['province']; ?></option>
+                                <?php
+                        }
+                        ?>
                             </select>
                         </div>
                         <div class="mb-3 ">
                             <label for="district" class="form-label text-white fs-5">district</label>
-                            <select id="district" class="form-select form-select1" name="district" style="width:100%">
-                                <option selected>Choose district</option>
-                                <option value="Kaski">Kaski</option>
-                                <option value="Bajhang">Bajhang</option>
+                            <select id="inputProvience" class="form-control form-select1 " name="district"
+                                style="width:100%">
+                                <option disabled selected>Select District</option>
+                                <?php
+                                $category="SELECT * from options";
+                                $c_result= mysqli_query($conn, $category);
+                                while($catagory_data=mysqli_fetch_array( $c_result)){
+                            ?>
+                                <option value="<?php echo $catagory_data['district']; ?>">
+                                    <?php echo $catagory_data['district']; ?></option>
+                                <?php
+                        }
+                        ?>
                             </select>
                         </div>
                         <div class="mb-3 ">

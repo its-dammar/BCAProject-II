@@ -132,9 +132,12 @@
 																	<table>
 																		<div>
 																			<tr>
-																				<td><input type="radio" name="filename1" value="<?php echo $data_select['filelink']; ?>" style="opacity: 0;" />
-																					<img src="<?php echo "../uploads/pdfimage1632986670.png" ?>" alt="" height="40px;" width="40px;" style="margin-right:20px;">
+																				<td>
+																					<div class="col-md-6 p-2">
+																					<input type="radio" name="filename1" value="<?php echo $data_select['filelink']; ?>" style="opacity: 0;" />
+																					<!-- <img src="<?php echo "../uploads/" . $data_select['filelink']; ?>" alt="" height="40px;" width="40px;" style="margin-right:20px;"> -->
 																					<span class="nameFile"><?php echo $data_select['filelink']; ?></span>
+																					</div>
 																				</td>
 																			</tr>
 																		</div>
